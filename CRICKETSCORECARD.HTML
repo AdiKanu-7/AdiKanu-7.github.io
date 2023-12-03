@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scoreboard</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"/>
+    <!-- Stylesheet -->
+    <style type="text/css">
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Calibri", sans-serif;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(#000000 50%, #1A1110 50%);
+}
+.scoreboard {
+  background-color: #1A1110;
+  width: min(90%, 34em);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  padding: 3em;
+  border: 3px solid #FEFEFE;
+  
+  border-radius: 0.5em;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
+}
+.team {
+  text-align: center;
+  border: 3px solid #FEFEFE;
+  background-color: #353638;
+  padding: 2em;
+  border-radius: 0.5em;
+}
+button {
+  cursor: pointer;
+}
+#reset-btn {
+  background-color: transparent;
+  border: 3px solid #FEFEFE;
+  color: #E6236B;
+  height: 5em;
+  width: 5em;
+  margin: auto;
+  border-radius: 0.5em;
+}
+
+#reset-btn1 {
+  background-color: transparent;
+  border: 3px solid #FEFEFE;
+  color: #E6236B;
+  height: 5em;
+  width: 5em;
+  margin: auto;
+  border-radius: 0.5em;
+}
+.team h2 {
+  color: #8F47B3;
+}
+.team p {
+  color: #ffffff;
+  font-size: 3.75em;
+}
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.team button {
+  background-color: #C9A0DC;
+  border: none;
+  outline: none;
+  padding: 0.3em 0.7em;
+  border-radius: 0.3em;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+      
+    </style>
+    
+  </head>
+  <body>
+  
+    <div class="scoreboard">
+      <div class="team">
+        <h2>Team A</h2>
+        <p id="teamAScore">0</p>
+        <div class="btn-container">
+          <button onclick="incrementScore('teamA')">+</button>
+          <button onclick="decrementScore('teamA')">-</button>
+        </div>
+      </div>
+
+      <button id="reset-btn" onclick="resetScores()">Reset</button>
+
+      <div class="team">
+        <h2>Team B</h2>
+        <p id="teamBScore">0</p>
+        <div class="btn-container">
+          <button onclick="incrementScore('teamB')">+</button>
+          <button onclick="decrementScore('teamB')">-</button>
+        </div>
+      </div>
+      
+      <div class="team">
+        <h2>WICKETS C</h2>
+        <p id="teamCScore">0</p>
+        <div class="btn-container">
+          <button onclick="incrementScore('teamC')">+</button>
+          <button onclick="decrementScore('teamC')">-</button>
+        </div>
+      </div>
+      
+      <button id="reset-btn1" onclick="resetScores1()">Reset1</button>
+      
+       <div class="team">
+        <h2>OVERS</h2>
+        <p id="teamDScore">0</p>
+        <div class="btn-container">
+          <button onclick="incrementScore('teamD')">+</button>
+          <button onclick="decrementScore('teamD')">-</button>
+        </div>
+      </div>
+      
+      
+    </div>
+    <!-- Script-->
+<script type="text/javascript">
+      //Initialize scores for Team A  and Team B
+let teamAScore = 0;
+let teamBScore = 0;
+let teamCScore = 0;
+let teamDScore = 0;
+
+
+//Get references to the HTML elements that displays the scores
+let teamAScoreValue = document.getElementById("teamAScore");
+let teamBScoreValue = document.getElementById("teamBScore");
+let teamCScoreValue = document.getElementById("teamCScore");
+let teamDScoreValue = document.getElementById("teamDScore");
+//Function to increment the score for a given team
+let incrementScore = (team) => {
+  if (team === "teamA") {
+    teamAScore++;
+    teamAScoreValue.textContent = teamAScore;
+  } else if (team === "teamB") {
+    teamBScore++;
+    teamBScoreValue.textContent = teamBScore;
+  }else if (team === "teamC") {
+    teamCScore++;
+    teamCScoreValue.textContent = teamCScore;
+  }else if (team === "teamD") {
+    teamDScore++;
+    teamDScoreValue.textContent = teamDScore;
+  }
+};
+
+//Function to decrement the score for a given team
+let decrementScore = (team) => {
+  if (team === "teamA") {
+    teamAScore--;
+    teamAScoreValue.textContent = teamAScore;
+  } else if (team === "teamB") {
+    teamBScore--;
+    teamBScoreValue.textContent = teamBScore;
+  }else if (team === "teamC") {
+    teamCScore--;
+    teamCScoreValue.textContent = teamCScore;
+  }else if  (team === "teamD") {
+    teamDScore--;
+    teamDScoreValue.textContent = teamDScore;
+  }
+};
+//Function to reset both team scores to 0
+let resetScores = () => {
+  teamAScore = 0;
+  teamBScore = 0;
+  teamAScoreValue.textContent = teamAScore;
+  teamBScoreValue.textContent = teamBScore;
+};
+
+let resetScores1 = () => {
+ teamCScore = 0;
+  teamDScore = 0;
+ teamCScoreValue.textContent = teamCScore;
+ teamDScoreValue.textContent = teamDScore;
+};
+
+    </script>
+  </body>
+</html>
