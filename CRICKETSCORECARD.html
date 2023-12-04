@@ -7,9 +7,6 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Stylesheet -->
     <style type="text/css">
     * {
@@ -23,13 +20,16 @@ body {
   background: linear-gradient(#000000 50%, #1A1110 50%);
 }
 .scoreboard {
-  background-color: black;
+  background-color: #1A1110;
   width: min(100%, 34em);
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
   padding: 3em;
+  
+  border-radius: 0.5em;
+
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   align-items: center;
@@ -47,7 +47,14 @@ button {
 #reset-btn {
   background-color: transparent;
   border: 3px solid #FEFEFE;
-  color: #E6236B;
+  color: #ffffcc;
+            text-shadow: 0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px green,
+                0 0 30px green,
+                0 0 40px green,
+                0 0 55px green,
+                0 0 70px green;
   height: 5em;
   width: 5em;
   margin: auto;
@@ -57,14 +64,28 @@ button {
 #reset-btn1 {
   background-color: transparent;
   border: 3px solid #FEFEFE;
-  color: #E6236B;
+  color: #ffffcc;
+            text-shadow: 0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px green,
+                0 0 30px green,
+                0 0 40px green,
+                0 0 55px green,
+                0 0 70px green;
   height: 5em;
   width: 5em;
   margin: auto;
   border-radius: 0.5em;
 }
 .team h2 {
-  color: #8F47B3;
+  color: #ffffcc;
+            text-shadow: 0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px green,
+                0 0 30px green,
+                0 0 40px green,
+                0 0 55px green,
+                0 0 70px green;
 }
 .team p {
   color: #ffffff;
@@ -76,7 +97,7 @@ button {
   justify-content: space-between;
 }
 .team button {
-  background-color: #C9A0DC;
+  background-color: white;
   border: none;
   outline: none;
   padding: 0.3em 0.7em;
@@ -112,7 +133,7 @@ button {
       </div>
       
       <div class="team">
-        <h2>WICKETS </h2>
+        <h2>WICKETS C</h2>
         <p id="teamCScore">0</p>
         <div class="btn-container">
           <button onclick="incrementScore('teamC')">+</button>
